@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Bosnian Pyramids — Discover Visoko, Bosnia{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900"></div>
+  <!-- Decorative pyramid shapes -->
+  <div class="absolute inset-0 overflow-hidden opacity-10">
+    <svg viewBox="0 0 800 600" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full" fill="white">
+      <polygon points="400,50 50,500 750,500"/>
+      <polygon points="650,150 450,500 850,500"/>
+      <polygon points="150,200 0,500 350,500"/>
+    </svg>
+  </div>
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <span class="inline-block text-amber-400 text-6xl mb-4">&#9651;</span>
+    <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      The Bosnian<br><span class="text-amber-400">Pyramids</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-stone-300 mb-4 font-light">Visoko, Bosnia &amp; Herzegovina</p>
+    <p class="text-lg text-stone-400 mb-10 max-w-2xl mx-auto">
+      Europe's most mysterious ancient structures — hills shaped like pyramids, underground tunnels, and a story that rewrites history.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="{% url 'pyramids' %}" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-lg">
+        Explore the Pyramids
+      </a>
+      <a href="{% url 'visit' %}" class="border border-stone-400 hover:border-amber-400 hover:text-amber-400 text-stone-200 font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-lg">
+        Plan Your Visit
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Quick facts bar -->
+<section class="bg-amber-500 py-6">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+    <div>
+      <div class="text-3xl font-bold font-serif">220m</div>
+      <div class="text-sm font-medium opacity-90">Height of Sun Pyramid</div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-serif">12,000+</div>
+      <div class="text-sm font-medium opacity-90">Years Old (est.)</div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-serif">5</div>
+      <div class="text-sm font-medium opacity-90">Pyramid Structures</div>
+    </div>
+    <div>
+      <div class="text-3xl font-bold font-serif">10km+</div>
+      <div class="text-sm font-medium opacity-90">Tunnel Network</div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="font-serif text-4xl font-bold mb-6 text-stone-900">A Discovery That Changed Everything</h2>
+      <p class="text-stone-600 text-lg leading-relaxed mb-4">
+        In 2005, Bosnian-American archaeologist Dr. Semir Osmanagić identified the hills surrounding Visoko as possibly the largest pyramid complex in the world. What appeared to be natural hills showed striking geometric shapes, unusual stone plates, and an extensive network of underground tunnels.
+      </p>
+      <p class="text-stone-600 text-lg leading-relaxed mb-6">
+        The Pyramid of the Sun stands 220 metres tall — if confirmed as man-made, it would be larger than the Great Pyramid of Giza. Whether ancient wonder or natural formation, the site draws tens of thousands of visitors every year.
+      </p>
+      <a href="{% url 'pyramids' %}" class="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
+        Learn more about the pyramids
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-stone-200 rounded-xl aspect-square flex items-center justify-center">
+        <div class="text-center p-4">
+          <div class="text-5xl mb-2">🏔️</div>
+          <div class="font-serif font-bold text-stone-700">Pyramid of the Sun</div>
+        </div>
+      </div>
+      <div class="bg-amber-100 rounded-xl aspect-square flex items-center justify-center mt-6">
+        <div class="text-center p-4">
+          <div class="text-5xl mb-2">🌙</div>
+          <div class="font-serif font-bold text-stone-700">Pyramid of the Moon</div>
+        </div>
+      </div>
+      <div class="bg-amber-100 rounded-xl aspect-square flex items-center justify-center">
+        <div class="text-center p-4">
+          <div class="text-5xl mb-2">🌲</div>
+          <div class="font-serif font-bold text-stone-700">Pyramid of the Dragon</div>
+        </div>
+      </div>
+      <div class="bg-stone-200 rounded-xl aspect-square flex items-center justify-center mt-6">
+        <div class="text-center p-4">
+          <div class="text-5xl mb-2">⚡</div>
+          <div class="font-serif font-bold text-stone-700">Pyramid of Love</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three pillars / CTA cards -->
+<section class="bg-stone-100 py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-serif text-3xl font-bold text-center mb-12 text-stone-900">Everything You Need to Know</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="{% url 'pyramids' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
+        <div class="text-4xl mb-4">🏛️</div>
+        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">The Pyramids</h3>
+        <p class="text-stone-500 leading-relaxed">Meet all five pyramid structures, explore the underground tunnels, and discover what researchers have found.</p>
+        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Explore →</span>
+      </a>
+      <a href="{% url 'getting_here' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
+        <div class="text-4xl mb-4">🚌</div>
+        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">Getting Here</h3>
+        <p class="text-stone-500 leading-relaxed">Visoko is just 30 km from Sarajevo. Find routes by car, bus, and guided tour — getting here is easy.</p>
+        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Directions →</span>
+      </a>
+      <a href="{% url 'visit' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
+        <div class="text-4xl mb-4">🗓️</div>
+        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">Plan Your Visit</h3>
+        <p class="text-stone-500 leading-relaxed">Opening hours, tickets, what to wear, where to stay — everything to make your trip smooth and memorable.</p>
+        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Plan now →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Quote / atmosphere -->
+<section class="py-20 bg-stone-900 text-white">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <span class="text-amber-400 text-4xl">"</span>
+    <p class="font-serif text-2xl md:text-3xl leading-relaxed text-stone-200 my-4">
+      Standing at the top of the Pyramid of the Sun, with Visoko spread below and the valley stretching into the distance, you understand why people have been drawn to this place for millennia.
+    </p>
+    <p class="text-stone-500 mt-6">— Visitor, Visoko 2024</p>
+  </div>
+</section>
+
+{% endblock %}
