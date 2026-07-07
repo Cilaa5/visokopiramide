@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Bosnian Pyramids — Discover Visoko, Bosnia{% endblock %}
 
@@ -6,15 +7,8 @@
 
 <!-- Hero -->
 <section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900"></div>
-  <!-- Decorative pyramid shapes -->
-  <div class="absolute inset-0 overflow-hidden opacity-10">
-    <svg viewBox="0 0 800 600" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full" fill="white">
-      <polygon points="400,50 50,500 750,500"/>
-      <polygon points="650,150 450,500 850,500"/>
-      <polygon points="150,200 0,500 350,500"/>
-    </svg>
-  </div>
+  <img src="{% static 'images/visokolandscape.jpg' %}" alt="Visoko with the Pyramid of the Sun" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-black/60"></div>
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
     <span class="inline-block text-amber-400 text-6xl mb-4">&#9651;</span>
     <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -79,28 +73,28 @@
       </a>
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <div class="bg-stone-200 rounded-xl aspect-square flex items-center justify-center">
-        <div class="text-center p-4">
-          <div class="text-5xl mb-2">🏔️</div>
-          <div class="font-serif font-bold text-stone-700">Pyramid of the Sun</div>
+      <div class="relative rounded-xl overflow-hidden aspect-square">
+        <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+          <span class="font-serif font-bold text-white text-sm">Pyramid of the Sun</span>
         </div>
       </div>
-      <div class="bg-amber-100 rounded-xl aspect-square flex items-center justify-center mt-6">
-        <div class="text-center p-4">
-          <div class="text-5xl mb-2">🌙</div>
-          <div class="font-serif font-bold text-stone-700">Pyramid of the Moon</div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mt-6">
+        <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+          <span class="font-serif font-bold text-white text-sm">Pyramid of the Moon</span>
         </div>
       </div>
-      <div class="bg-amber-100 rounded-xl aspect-square flex items-center justify-center">
-        <div class="text-center p-4">
-          <div class="text-5xl mb-2">🌲</div>
-          <div class="font-serif font-bold text-stone-700">Pyramid of the Dragon</div>
+      <div class="relative rounded-xl overflow-hidden aspect-square">
+        <img src="{% static 'images/tuneliravne.webp' %}" alt="Ravne Tunnels" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+          <span class="font-serif font-bold text-white text-sm">Ravne Tunnels</span>
         </div>
       </div>
-      <div class="bg-stone-200 rounded-xl aspect-square flex items-center justify-center mt-6">
-        <div class="text-center p-4">
-          <div class="text-5xl mb-2">⚡</div>
-          <div class="font-serif font-bold text-stone-700">Pyramid of Love</div>
+      <div class="relative rounded-xl overflow-hidden aspect-square mt-6">
+        <img src="{% static 'images/visokolandscape.jpg' %}" alt="Visoko Valley" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
+          <span class="font-serif font-bold text-white text-sm">Visoko Valley</span>
         </div>
       </div>
     </div>

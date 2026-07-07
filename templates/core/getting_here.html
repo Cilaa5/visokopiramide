@@ -5,10 +5,12 @@
 {% block content %}
 
 <!-- Page Hero -->
-<div class="pt-16 bg-stone-900 text-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<div class="pt-16 relative text-white">
+  <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1800&q=80&fit=crop" alt="Road trip travel" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <h1 class="font-serif text-5xl font-bold mb-4">Getting <span class="text-amber-400">Here</span></h1>
-    <p class="text-stone-400 text-xl max-w-2xl">Visoko is easy to reach — it's just 30 km from Sarajevo and well connected by road and public transport.</p>
+    <p class="text-stone-300 text-xl max-w-2xl">Visoko is easy to reach — it's just 30 km from Sarajevo and well connected by road and public transport.</p>
   </div>
 </div>
 
@@ -106,15 +108,28 @@
     </div>
   </div>
 
-  <!-- Map placeholder -->
-  <div class="bg-stone-900 rounded-2xl p-8 md:p-12 text-white text-center">
-    <div class="text-5xl mb-4">📍</div>
-    <h2 class="font-serif text-2xl font-bold mb-3">Visoko, Bosnia &amp; Herzegovina</h2>
-    <p class="text-stone-400 mb-6">Coordinates: 43.9896° N, 18.1772° E</p>
-    <a href="https://maps.google.com/?q=Bosnian+Pyramid+of+the+Sun,+Visoko" target="_blank" rel="noopener"
-       class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-      Open in Google Maps →
-    </a>
+  <!-- Interactive Map -->
+  <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-200">
+    <div class="bg-stone-900 px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <h2 class="font-serif text-xl font-bold text-white">📍 Bosnian Pyramid of the Sun — Visoko</h2>
+        <p class="text-stone-400 text-sm mt-1">43.9896° N, 18.1772° E</p>
+      </div>
+      <a href="https://maps.google.com/?q=Bosnian+Pyramid+of+the+Sun,+Visoko,+Bosnia" target="_blank" rel="noopener"
+         class="flex-shrink-0 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors text-sm">
+        Open in Google Maps →
+      </a>
+    </div>
+    <iframe
+      src="https://maps.google.com/maps?q=Bosanska+piramida+Sunca,+Visoko,+Bosnia+and+Herzegovina&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="480"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Bosnian Pyramid of the Sun location map">
+    </iframe>
   </div>
 
 </section>

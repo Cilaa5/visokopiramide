@@ -1,14 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}The Pyramids — Bosnian Pyramids, Visoko{% endblock %}
 
 {% block content %}
 
 <!-- Page Hero -->
-<div class="pt-16 bg-stone-900 text-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+<div class="pt-16 relative text-white">
+  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&fit=crop" alt="Ancient pyramids" class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-black/70"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <h1 class="font-serif text-5xl font-bold mb-4">The <span class="text-amber-400">Pyramids</span></h1>
-    <p class="text-stone-400 text-xl max-w-2xl">Five ancient structures hidden in the Visoko valley. Each one unique, each one waiting to be explored.</p>
+    <p class="text-stone-300 text-xl max-w-2xl">Five ancient structures hidden in the Visoko valley. Each one unique, each one waiting to be explored.</p>
   </div>
 </div>
 
@@ -29,7 +32,9 @@
     <div class="bg-gradient-to-r from-amber-500 to-amber-700 h-2"></div>
     <div class="p-8 md:p-10">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="flex-shrink-0 w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center text-4xl">☀️</div>
+        <div class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden">
+          <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" class="w-full h-full object-cover" />
+        </div>
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-3 mb-3">
             <h2 class="font-serif text-3xl font-bold text-stone-900">Pyramid of the Sun</h2>
@@ -65,7 +70,9 @@
     <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-2"></div>
     <div class="p-8 md:p-10">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="flex-shrink-0 w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center text-4xl">🌙</div>
+        <div class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden">
+          <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" class="w-full h-full object-cover" />
+        </div>
         <div class="flex-1">
           <div class="flex flex-wrap items-center gap-3 mb-3">
             <h2 class="font-serif text-3xl font-bold text-stone-900">Pyramid of the Moon</h2>
