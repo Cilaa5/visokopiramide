@@ -5,137 +5,166 @@
 
 {% block content %}
 
-<!-- Hero -->
-<section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
-  <img src="{% static 'images/visokolandscape.jpg' %}" alt="Visoko with the Pyramid of the Sun" class="absolute inset-0 w-full h-full object-cover" />
-  <div class="absolute inset-0 bg-black/60"></div>
-  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    <span class="inline-block text-amber-400 text-6xl mb-4">&#9651;</span>
-    <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
-      The Bosnian<br><span class="text-amber-400">Pyramids</span>
+<!-- ══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-bg">
+    <img src="{% static 'images/visokolandscape.jpg' %}"
+         alt="Visoko town with the Pyramid of the Sun rising behind it"
+         fetchpriority="high" />
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content max-w-5xl mx-auto">
+    <div class="hero-eyebrow">
+      <span>Bosnia &amp; Herzegovina</span>
+    </div>
+    <h1 class="hero-title">
+      The Bosnian<br>
+      <span class="highlight">Pyramids</span>
     </h1>
-    <p class="text-xl md:text-2xl text-stone-300 mb-4 font-light">Visoko, Bosnia &amp; Herzegovina</p>
-    <p class="text-lg text-stone-400 mb-10 max-w-2xl mx-auto">
-      Europe's most mysterious ancient structures — hills shaped like pyramids, underground tunnels, and a story that rewrites history.
+    <p class="hero-subtitle">
+      Europe's most mysterious ancient complex — hills shaped like pyramids, kilometres of underground tunnels, and a story that may rewrite civilisation.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="{% url 'pyramids' %}" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-lg">
+    <div class="hero-cta-group">
+      <a href="{% url 'pyramids' %}" class="btn-primary">
         Explore the Pyramids
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="{% url 'visit' %}" class="border border-stone-400 hover:border-amber-400 hover:text-amber-400 text-stone-200 font-semibold px-8 py-4 rounded-lg transition-colors duration-200 text-lg">
-        Plan Your Visit
-      </a>
+      <a href="{% url 'visit' %}" class="btn-ghost">Plan Your Visit</a>
     </div>
   </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-    </svg>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- Quick facts bar -->
-<section class="bg-amber-500 py-6">
-  <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
-    <div>
-      <div class="text-3xl font-bold font-serif">220m</div>
-      <div class="text-sm font-medium opacity-90">Height of Sun Pyramid</div>
+<!-- ══════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════ -->
+<section class="stats-bar">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 relative">
+    <div class="stat-item reveal from-bottom stagger-1">
+      <span class="stat-number" data-counter data-target="220" data-suffix="m">220m</span>
+      <span class="stat-label">Height — Sun Pyramid</span>
     </div>
-    <div>
-      <div class="text-3xl font-bold font-serif">12,000+</div>
-      <div class="text-sm font-medium opacity-90">Years Old (est.)</div>
+    <div class="stat-item reveal from-bottom stagger-2">
+      <span class="stat-number" data-counter data-target="12000" data-suffix="+">12,000+</span>
+      <span class="stat-label">Years old (est.)</span>
     </div>
-    <div>
-      <div class="text-3xl font-bold font-serif">5</div>
-      <div class="text-sm font-medium opacity-90">Pyramid Structures</div>
+    <div class="stat-item reveal from-bottom stagger-3">
+      <span class="stat-number" data-counter data-target="5">5</span>
+      <span class="stat-label">Pyramid structures</span>
     </div>
-    <div>
-      <div class="text-3xl font-bold font-serif">10km+</div>
-      <div class="text-sm font-medium opacity-90">Tunnel Network</div>
+    <div class="stat-item reveal from-bottom stagger-4">
+      <span class="stat-number" data-counter data-target="10" data-suffix="km+">10km+</span>
+      <span class="stat-label">Tunnel network</span>
     </div>
   </div>
 </section>
 
-<!-- About -->
-<section class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid md:grid-cols-2 gap-12 items-center">
+<!-- ══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section class="py-24 max-w-6xl mx-auto px-6 lg:px-8">
+  <div class="grid md:grid-cols-2 gap-16 items-center">
     <div>
-      <h2 class="font-serif text-4xl font-bold mb-6 text-stone-900">A Discovery That Changed Everything</h2>
-      <p class="text-stone-600 text-lg leading-relaxed mb-4">
-        In 2005, Bosnian-American archaeologist Dr. Semir Osmanagić identified the hills surrounding Visoko as possibly the largest pyramid complex in the world. What appeared to be natural hills showed striking geometric shapes, unusual stone plates, and an extensive network of underground tunnels.
+      <p class="section-label reveal from-left">Ancient Wonder</p>
+      <h2 class="section-title reveal from-left stagger-1 mb-6">
+        A Discovery That<br><span>Changed Everything</span>
+      </h2>
+      <p class="text-stone-500 text-lg leading-relaxed mb-5 reveal from-left stagger-2">
+        In 2005, Bosnian-American archaeologist Dr. Semir Osmanagić identified the hills surrounding Visoko as possibly the largest pyramid complex in the world. What appeared to be natural hills showed striking geometric shapes, unusual stone plates, and an extensive tunnel network.
       </p>
-      <p class="text-stone-600 text-lg leading-relaxed mb-6">
-        The Pyramid of the Sun stands 220 metres tall — if confirmed as man-made, it would be larger than the Great Pyramid of Giza. Whether ancient wonder or natural formation, the site draws tens of thousands of visitors every year.
+      <p class="text-stone-500 leading-relaxed mb-8 reveal from-left stagger-3">
+        The Pyramid of the Sun stands 220 metres tall — if confirmed as man-made, it would be larger than the Great Pyramid of Giza. Whether ancient wonder or natural formation, it draws tens of thousands of visitors every year.
       </p>
-      <a href="{% url 'pyramids' %}" class="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors">
+      <a href="{% url 'pyramids' %}" class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all duration-300 reveal from-left stagger-4">
         Learn more about the pyramids
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="relative rounded-xl overflow-hidden aspect-square">
-        <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-          <span class="font-serif font-bold text-white text-sm">Pyramid of the Sun</span>
-        </div>
+
+    <div class="grid grid-cols-2 gap-4 reveal scale-in stagger-2">
+      <div class="img-card aspect-square">
+        <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" loading="lazy" />
+        <div class="img-caption"><span>Pyramid of the Sun</span></div>
       </div>
-      <div class="relative rounded-xl overflow-hidden aspect-square mt-6">
-        <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-          <span class="font-serif font-bold text-white text-sm">Pyramid of the Moon</span>
-        </div>
+      <div class="img-card aspect-square mt-8">
+        <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" loading="lazy" />
+        <div class="img-caption"><span>Pyramid of the Moon</span></div>
       </div>
-      <div class="relative rounded-xl overflow-hidden aspect-square">
-        <img src="{% static 'images/tuneliravne.webp' %}" alt="Ravne Tunnels" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-          <span class="font-serif font-bold text-white text-sm">Ravne Tunnels</span>
-        </div>
+      <div class="img-card aspect-square">
+        <img src="{% static 'images/tuneliravne.webp' %}" alt="Ravne Tunnels" loading="lazy" />
+        <div class="img-caption"><span>Ravne Tunnels</span></div>
       </div>
-      <div class="relative rounded-xl overflow-hidden aspect-square mt-6">
-        <img src="{% static 'images/visokolandscape.jpg' %}" alt="Visoko Valley" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/40 flex items-end p-4">
-          <span class="font-serif font-bold text-white text-sm">Visoko Valley</span>
-        </div>
+      <div class="img-card aspect-square mt-8">
+        <img src="{% static 'images/visokolandscape.jpg' %}" alt="Visoko Valley" loading="lazy" />
+        <div class="img-caption"><span>Visoko Valley</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Three pillars / CTA cards -->
-<section class="bg-stone-100 py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="font-serif text-3xl font-bold text-center mb-12 text-stone-900">Everything You Need to Know</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <a href="{% url 'pyramids' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
-        <div class="text-4xl mb-4">🏛️</div>
-        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">The Pyramids</h3>
-        <p class="text-stone-500 leading-relaxed">Meet all five pyramid structures, explore the underground tunnels, and discover what researchers have found.</p>
-        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Explore →</span>
+<!-- ══════════════════════════════════════════
+     FEATURE CARDS
+═══════════════════════════════════════════ -->
+<section class="py-24" style="background:linear-gradient(180deg,#f5f5f4 0%,#fff 100%);">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="section-label reveal from-bottom justify-center">Your Guide</p>
+      <h2 class="section-title reveal from-bottom stagger-1">Everything You Need<br><span>to Know</span></h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="{% url 'pyramids' %}" class="feature-card reveal from-bottom stagger-1">
+        <div class="feature-icon">🏛️</div>
+        <h3 style="font-family:Georgia,serif; font-size:1.25rem; font-weight:700; color:#1c1917; margin-bottom:0.75rem;">The Pyramids</h3>
+        <p style="color:#78716c; line-height:1.7; font-size:0.9375rem;">Meet all five pyramid structures, explore the underground tunnels, and discover what researchers have found.</p>
+        <div class="feature-arrow">
+          Explore
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
       </a>
-      <a href="{% url 'getting_here' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
-        <div class="text-4xl mb-4">🚌</div>
-        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">Getting Here</h3>
-        <p class="text-stone-500 leading-relaxed">Visoko is just 30 km from Sarajevo. Find routes by car, bus, and guided tour — getting here is easy.</p>
-        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Directions →</span>
+      <a href="{% url 'getting_here' %}" class="feature-card reveal from-bottom stagger-2">
+        <div class="feature-icon">🚌</div>
+        <h3 style="font-family:Georgia,serif; font-size:1.25rem; font-weight:700; color:#1c1917; margin-bottom:0.75rem;">Getting Here</h3>
+        <p style="color:#78716c; line-height:1.7; font-size:0.9375rem;">Visoko is just 30 km from Sarajevo. Find routes by car, bus, and guided tour — getting here is easy.</p>
+        <div class="feature-arrow">
+          Directions
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
       </a>
-      <a href="{% url 'visit' %}" class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow border border-stone-200">
-        <div class="text-4xl mb-4">🗓️</div>
-        <h3 class="font-serif text-xl font-bold mb-3 text-stone-900 group-hover:text-amber-600 transition-colors">Plan Your Visit</h3>
-        <p class="text-stone-500 leading-relaxed">Opening hours, tickets, what to wear, where to stay — everything to make your trip smooth and memorable.</p>
-        <span class="inline-block mt-4 text-amber-600 font-semibold text-sm">Plan now →</span>
+      <a href="{% url 'visit' %}" class="feature-card reveal from-bottom stagger-3">
+        <div class="feature-icon">🗓️</div>
+        <h3 style="font-family:Georgia,serif; font-size:1.25rem; font-weight:700; color:#1c1917; margin-bottom:0.75rem;">Plan Your Visit</h3>
+        <p style="color:#78716c; line-height:1.7; font-size:0.9375rem;">Opening hours, tickets, what to wear, where to stay — everything to make your trip smooth and memorable.</p>
+        <div class="feature-arrow">
+          Plan now
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Quote / atmosphere -->
-<section class="py-20 bg-stone-900 text-white">
-  <div class="max-w-3xl mx-auto px-4 text-center">
-    <span class="text-amber-400 text-4xl">"</span>
-    <p class="font-serif text-2xl md:text-3xl leading-relaxed text-stone-200 my-4">
+<!-- ══════════════════════════════════════════
+     QUOTE
+═══════════════════════════════════════════ -->
+<section class="quote-section py-28" style="background:#1c1917;">
+  <div class="quote-bg-text">▲</div>
+  <div class="max-w-4xl mx-auto px-6 text-center reveal scale-in">
+    <span class="quote-mark">"</span>
+    <blockquote class="premium">
       Standing at the top of the Pyramid of the Sun, with Visoko spread below and the valley stretching into the distance, you understand why people have been drawn to this place for millennia.
-    </p>
-    <p class="text-stone-500 mt-6">— Visitor, Visoko 2024</p>
+    </blockquote>
+    <div style="margin-top:2rem; display:flex; align-items:center; justify-content:center; gap:1rem;">
+      <div style="width:32px; height:1px; background:rgba(201,168,76,0.4);"></div>
+      <p style="color:#78716c; font-size:0.875rem; letter-spacing:0.05em;">Visitor, Visoko 2024</p>
+      <div style="width:32px; height:1px; background:rgba(201,168,76,0.4);"></div>
+    </div>
   </div>
 </section>
 

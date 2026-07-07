@@ -5,144 +5,136 @@
 
 {% block content %}
 
-<!-- Page Hero -->
-<div class="pt-16 relative text-white">
-  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&fit=crop" alt="Ancient pyramids" class="absolute inset-0 w-full h-full object-cover" />
-  <div class="absolute inset-0 bg-black/70"></div>
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <h1 class="font-serif text-5xl font-bold mb-4">The <span class="text-amber-400">Pyramids</span></h1>
-    <p class="text-stone-300 text-xl max-w-2xl">Five ancient structures hidden in the Visoko valley. Each one unique, each one waiting to be explored.</p>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <img src="{% static 'images/piramidasunca.jpg' %}" alt="Bosnian Pyramid of the Sun" fetchpriority="high" />
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <p class="section-label reveal from-bottom" style="color:rgba(201,168,76,0.9);">Archaeological Complex</p>
+      <h1 class="page-hero-title reveal from-bottom stagger-1">
+        The <span>Pyramids</span>
+      </h1>
+      <p style="color:rgba(255,255,255,0.6); font-size:1.125rem; max-width:520px; margin-top:1rem; line-height:1.7;" class="reveal from-bottom stagger-2">
+        Five ancient structures hidden in the Visoko valley. Each one unique, each one waiting to be explored.
+      </p>
+    </div>
   </div>
 </div>
 
-<!-- Overview -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <div class="prose prose-stone max-w-none">
-    <p class="text-xl text-stone-600 leading-relaxed">
-      The Bosnian Pyramid complex near Visoko consists of five pyramid-shaped hills, a massive underground tunnel system called Ravne, and numerous other archaeological features. Discovered in 2005 by Dr. Semir Osmanagić, the site has been under excavation ever since and continues to attract visitors, researchers, and curious travellers from across the world.
-    </p>
-  </div>
+<!-- INTRO -->
+<section class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+  <p class="text-xl text-stone-500 leading-relaxed max-w-3xl reveal from-bottom">
+    The Bosnian Pyramid complex near Visoko consists of five pyramid-shaped hills, a massive underground tunnel system called Ravne, and numerous other archaeological features. Discovered in 2005 by Dr. Semir Osmanagić, the site continues to attract visitors, researchers, and curious travellers from across the world.
+  </p>
 </section>
 
-<!-- Pyramid Cards -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-12">
+<!-- PYRAMID CARDS -->
+<section class="max-w-6xl mx-auto px-6 lg:px-8 pb-20 space-y-10">
 
-  <!-- Pyramid of the Sun -->
-  <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-    <div class="bg-gradient-to-r from-amber-500 to-amber-700 h-2"></div>
+  <!-- Sun -->
+  <div class="pyramid-card reveal from-bottom">
+    <div class="pyramid-card-accent"></div>
     <div class="p-8 md:p-10">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden">
-          <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" class="w-full h-full object-cover" />
+        <div class="pyramid-thumbnail">
+          <img src="{% static 'images/piramidasunca.jpg' %}" alt="Pyramid of the Sun" loading="lazy" />
         </div>
         <div class="flex-1">
-          <div class="flex flex-wrap items-center gap-3 mb-3">
-            <h2 class="font-serif text-3xl font-bold text-stone-900">Pyramid of the Sun</h2>
-            <span class="bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">Largest</span>
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <h2 style="font-family:Georgia,serif; font-size:1.875rem; font-weight:700; color:#1c1917;">Pyramid of the Sun</h2>
+            <span class="badge badge-gold">Largest</span>
           </div>
-          <div class="grid sm:grid-cols-3 gap-4 mb-6 text-center">
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-amber-600">220 m</div>
-              <div class="text-xs text-stone-500 mt-1">Height</div>
-            </div>
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-amber-600">~12,000</div>
-              <div class="text-xs text-stone-500 mt-1">Years old (est.)</div>
-            </div>
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-amber-600">N-S-E-W</div>
-              <div class="text-xs text-stone-500 mt-1">Cardinal orientation</div>
-            </div>
+          <div class="grid sm:grid-cols-3 gap-3 mb-6">
+            <div class="stat-pill"><span class="value">220 m</span><span class="label">Height</span></div>
+            <div class="stat-pill"><span class="value">~12,000</span><span class="label">Years old (est.)</span></div>
+            <div class="stat-pill"><span class="value">N·S·E·W</span><span class="label">Orientation</span></div>
           </div>
-          <p class="text-stone-600 leading-relaxed mb-4">
-            Visočica hill — the Pyramid of the Sun — is the tallest and most studied of the five structures. At 220 metres, it surpasses the Great Pyramid of Giza (138 m) in height. Its faces align almost perfectly with the four cardinal directions, and excavations have uncovered massive concrete/sandstone blocks on its surface.
+          <p class="text-stone-500 leading-relaxed mb-3">
+            Visočica hill — the Pyramid of the Sun — is the tallest and most studied of the five structures. At 220 metres, it surpasses the Great Pyramid of Giza (138 m) in height. Its faces align almost perfectly with the four cardinal directions, and excavations have uncovered massive sandstone blocks on its surface.
           </p>
-          <p class="text-stone-600 leading-relaxed">
-            Researchers have found stone terraces, a plateau at the top, and unusual electromagnetic and ultrasound readings emanating from the hill. The climb to the top takes about 30–45 minutes and rewards you with a panoramic view over the Visoko valley.
+          <p class="text-stone-500 leading-relaxed">
+            The climb to the top takes about 30–45 minutes and rewards you with a panoramic view over the Visoko valley. Researchers have found unusual electromagnetic and ultrasound readings emanating from the structure.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Pyramid of the Moon -->
-  <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-2"></div>
+  <!-- Moon -->
+  <div class="pyramid-card reveal from-bottom stagger-1">
+    <div class="pyramid-card-accent" style="background:linear-gradient(90deg,#3b82f6,#6366f1);"></div>
     <div class="p-8 md:p-10">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden">
-          <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" class="w-full h-full object-cover" />
+        <div class="pyramid-thumbnail">
+          <img src="{% static 'images/piramidamjeseca.jpg' %}" alt="Pyramid of the Moon" loading="lazy" />
         </div>
         <div class="flex-1">
-          <div class="flex flex-wrap items-center gap-3 mb-3">
-            <h2 class="font-serif text-3xl font-bold text-stone-900">Pyramid of the Moon</h2>
-            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Second largest</span>
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <h2 style="font-family:Georgia,serif; font-size:1.875rem; font-weight:700; color:#1c1917;">Pyramid of the Moon</h2>
+            <span class="badge badge-blue">Second largest</span>
           </div>
-          <div class="grid sm:grid-cols-3 gap-4 mb-6 text-center">
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-blue-600">190 m</div>
-              <div class="text-xs text-stone-500 mt-1">Height</div>
-            </div>
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-blue-600">3 sides</div>
-              <div class="text-xs text-stone-500 mt-1">Triangular shape</div>
-            </div>
-            <div class="bg-stone-50 rounded-xl p-4">
-              <div class="text-2xl font-bold text-blue-600">NW</div>
-              <div class="text-xs text-stone-500 mt-1">Facing direction</div>
-            </div>
+          <div class="grid sm:grid-cols-3 gap-3 mb-6">
+            <div class="stat-pill"><span class="value">190 m</span><span class="label">Height</span></div>
+            <div class="stat-pill"><span class="value">3 faces</span><span class="label">Triangular</span></div>
+            <div class="stat-pill"><span class="value">NW</span><span class="label">Facing</span></div>
           </div>
-          <p class="text-stone-600 leading-relaxed mb-4">
-            The Pyramid of the Moon (Plješevica hill) is a three-sided structure 190 metres tall. Its northwest face is the most clearly defined, with stone terraces visible after excavation. It sits directly across from the Pyramid of the Sun, creating a dramatic natural amphitheatre.
+          <p class="text-stone-500 leading-relaxed mb-3">
+            The Pyramid of the Moon (Plješevica hill) is a three-sided structure 190 metres tall. Its northwest face is the most clearly defined, with stone terraces visible after excavation.
           </p>
-          <p class="text-stone-600 leading-relaxed">
-            The climb here is steeper and less crowded than the Sun pyramid, offering a more adventurous experience and excellent views back towards the Sun Pyramid.
+          <p class="text-stone-500 leading-relaxed">
+            The climb here is steeper and less crowded than the Sun Pyramid, offering a more adventurous experience and excellent views back across the valley.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Pyramid of the Dragon -->
-  <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-    <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-2"></div>
+  <!-- Dragon -->
+  <div class="pyramid-card reveal from-bottom stagger-2">
+    <div class="pyramid-card-accent" style="background:linear-gradient(90deg,#10b981,#059669);"></div>
     <div class="p-8 md:p-10">
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="flex-shrink-0 w-20 h-20 bg-green-50 rounded-2xl flex items-center justify-center text-4xl">🐉</div>
+      <div class="flex items-start gap-6">
+        <div class="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+             style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">🐉</div>
         <div class="flex-1">
-          <div class="flex flex-wrap items-center gap-3 mb-3">
-            <h2 class="font-serif text-3xl font-bold text-stone-900">Pyramid of the Dragon</h2>
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <h2 style="font-family:Georgia,serif; font-size:1.875rem; font-weight:700; color:#1c1917;">Pyramid of the Dragon</h2>
           </div>
-          <p class="text-stone-600 leading-relaxed mb-4">
+          <p class="text-stone-500 leading-relaxed mb-3">
             Located to the east, the Pyramid of the Dragon (Buci hill) has a more elongated ridge-like shape. It connects to the underground Ravne tunnel system and contains some of the most interesting stone formations and inscriptions found at the complex.
           </p>
-          <p class="text-stone-600 leading-relaxed">
-            The site features medieval tombstones (stećci) and is surrounded by forests, making it a beautiful hike even for the casual visitor.
+          <p class="text-stone-500 leading-relaxed">
+            The site features medieval tombstones (stećci) and is surrounded by forests, making it a beautiful hike even for casual visitors.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Pyramid of Love + Temple of the Earth -->
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-      <div class="bg-gradient-to-r from-pink-400 to-rose-500 h-2"></div>
+  <!-- Love + Earth -->
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="pyramid-card reveal from-left">
+      <div class="pyramid-card-accent" style="background:linear-gradient(90deg,#ec4899,#f43f5e);"></div>
       <div class="p-8">
-        <div class="text-4xl mb-4">💛</div>
-        <h2 class="font-serif text-2xl font-bold mb-3 text-stone-900">Pyramid of Love</h2>
-        <p class="text-stone-600 leading-relaxed">
-          The smallest of the pyramids, the Pyramid of Love has a very regular, heart-shaped formation when viewed from above. It's a shorter hike and ideal for families or visitors with limited mobility.
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+             style="background:linear-gradient(135deg,#fff1f2,#ffe4e6);">💛</div>
+        <h2 style="font-family:Georgia,serif; font-size:1.375rem; font-weight:700; color:#1c1917; margin-bottom:0.75rem;">Pyramid of Love</h2>
+        <p class="text-stone-500 leading-relaxed text-sm">
+          The smallest of the five, with a very regular heart-shaped formation when viewed from above. A shorter, family-friendly hike ideal for all ages.
         </p>
       </div>
     </div>
-    <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-      <div class="bg-gradient-to-r from-stone-500 to-stone-700 h-2"></div>
+    <div class="pyramid-card reveal from-right stagger-1">
+      <div class="pyramid-card-accent" style="background:linear-gradient(90deg,#78716c,#44403c);"></div>
       <div class="p-8">
-        <div class="text-4xl mb-4">🌍</div>
-        <h2 class="font-serif text-2xl font-bold mb-3 text-stone-900">Temple of the Earth</h2>
-        <p class="text-stone-600 leading-relaxed">
-          More of a flat earthwork than a pyramid, the Temple of the Earth is a large plateau structure. Researchers believe it may have served as a ceremonial or gathering site for the people who built the complex.
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4"
+             style="background:linear-gradient(135deg,#f5f5f4,#e7e5e4);">🌍</div>
+        <h2 style="font-family:Georgia,serif; font-size:1.375rem; font-weight:700; color:#1c1917; margin-bottom:0.75rem;">Temple of the Earth</h2>
+        <p class="text-stone-500 leading-relaxed text-sm">
+          A large plateau earthwork rather than a classic pyramid. Researchers believe it served as a ceremonial gathering site for the people who built the complex.
         </p>
       </div>
     </div>
@@ -150,40 +142,57 @@
 
 </section>
 
-<!-- Ravne Tunnels -->
-<section class="bg-stone-900 text-white py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+<!-- RAVNE TUNNELS -->
+<section style="background:#1c1917;" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
       <div>
-        <h2 class="font-serif text-4xl font-bold mb-6">Ravne Underground <span class="text-amber-400">Tunnel Labyrinth</span></h2>
-        <p class="text-stone-300 leading-relaxed mb-4">
-          Beneath the pyramid complex lies an extensive network of underground tunnels known as Ravne. The tunnels stretch for over 10 kilometres and are still being excavated. Inside, you'll find large stone monoliths with carved symbols, healing ionised air, high humidity, and a constant cool temperature year-round.
+        <p class="section-label reveal from-left" style="color:rgba(201,168,76,0.9);">Underground</p>
+        <h2 class="section-title light reveal from-left stagger-1 mb-6">
+          Ravne Tunnel<br><span>Labyrinth</span>
+        </h2>
+        <p style="color:rgba(255,255,255,0.55); line-height:1.8; margin-bottom:1rem;" class="reveal from-left stagger-2">
+          Beneath the pyramid complex lies an extensive network of tunnels known as Ravne. The tunnels stretch for over 10 kilometres and are still being excavated. Inside, you'll find large stone monoliths with carved symbols, healing ionised air, and a constant cool temperature.
         </p>
-        <p class="text-stone-300 leading-relaxed mb-6">
-          The tunnels are accessible via a guided entry near the town. Around 2 km of tunnels are open to the public. The air quality inside is reportedly exceptional — many visitors describe a strong sense of well-being during their stay.
+        <p style="color:rgba(255,255,255,0.45); line-height:1.8; margin-bottom:2rem;" class="reveal from-left stagger-3">
+          Around 2 km are open to the public via guided tours. The air quality inside is exceptional — many visitors describe a remarkable sense of well-being.
         </p>
-        <div class="grid grid-cols-2 gap-4 text-center">
-          <div class="bg-stone-800 rounded-xl p-4">
-            <div class="text-2xl font-bold text-amber-400">10+ km</div>
-            <div class="text-xs text-stone-400 mt-1">Total tunnel length</div>
+        <div class="grid grid-cols-2 gap-3 reveal from-left stagger-4">
+          <div class="card-glass p-5 text-center">
+            <div style="font-family:Georgia,serif; font-size:1.75rem; font-weight:700; color:#c9a84c;">10+ km</div>
+            <div style="font-size:0.75rem; color:rgba(255,255,255,0.45); letter-spacing:0.08em; text-transform:uppercase; margin-top:0.25rem;">Total length</div>
           </div>
-          <div class="bg-stone-800 rounded-xl p-4">
-            <div class="text-2xl font-bold text-amber-400">~12°C</div>
-            <div class="text-xs text-stone-400 mt-1">Year-round temperature</div>
+          <div class="card-glass p-5 text-center">
+            <div style="font-family:Georgia,serif; font-size:1.75rem; font-weight:700; color:#c9a84c;">~12°C</div>
+            <div style="font-size:0.75rem; color:rgba(255,255,255,0.45); letter-spacing:0.08em; text-transform:uppercase; margin-top:0.25rem;">Year-round</div>
           </div>
         </div>
       </div>
-      <div class="bg-stone-800 rounded-2xl p-8 text-center">
-        <div class="text-7xl mb-6">🕳️</div>
-        <h3 class="font-serif text-xl font-bold mb-3">Visiting the Tunnels</h3>
-        <ul class="text-stone-400 text-left space-y-2">
-          <li>✔ Guided tours available daily</li>
-          <li>✔ Approx. 1–1.5 hours for the main route</li>
-          <li>✔ Bring a light jacket (it's cool inside)</li>
-          <li>✔ Suitable for all ages</li>
-          <li>✔ Separate ticket from the pyramids</li>
+
+      <div class="card-glass p-8 reveal from-right stagger-1">
+        <div class="text-center mb-6">
+          <div class="text-6xl mb-4">🕳️</div>
+          <h3 style="font-family:Georgia,serif; font-size:1.25rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">Visiting the Tunnels</h3>
+        </div>
+        <ul style="space-y:0.75rem;">
+          <li style="color:rgba(255,255,255,0.6); font-size:0.9rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; gap:0.75rem;">
+            <span style="color:#c9a84c;">✔</span> Guided tours available daily
+          </li>
+          <li style="color:rgba(255,255,255,0.6); font-size:0.9rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; gap:0.75rem;">
+            <span style="color:#c9a84c;">✔</span> Approx. 1–1.5 hours for main route
+          </li>
+          <li style="color:rgba(255,255,255,0.6); font-size:0.9rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; gap:0.75rem;">
+            <span style="color:#c9a84c;">✔</span> Bring a light jacket (cool inside)
+          </li>
+          <li style="color:rgba(255,255,255,0.6); font-size:0.9rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; gap:0.75rem;">
+            <span style="color:#c9a84c;">✔</span> Suitable for all ages
+          </li>
+          <li style="color:rgba(255,255,255,0.6); font-size:0.9rem; padding:0.6rem 0; display:flex; align-items:center; gap:0.75rem;">
+            <span style="color:#c9a84c;">✔</span> Separate ticket from pyramids
+          </li>
         </ul>
-        <a href="{% url 'visit' %}" class="mt-6 inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        <a href="{% url 'visit' %}" class="btn-primary w-full justify-center mt-6"
+           style="width:100%; justify-content:center; display:flex;">
           See ticket info →
         </a>
       </div>
